@@ -1,0 +1,171 @@
+
+.bd-placeholder-img {
+  font-size: 20px;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 30px;
+  }
+}
+* {
+box-sizing: border-box;
+}
+.card{
+  margin: 10px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  }
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 2px groove inherit;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 8px;
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+@media only screen and (max-width: 768px) {
+/* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+    }
+  }
+
+
+body{
+  background-image: url(../img/neon-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+footer{
+  opacity: 0.95;
+}
+
+
+.shadow-sm{
+  border-radius: 6px;
+  margin: 4px;
+  border: 1px solid #223366;
+  background-color: rgba(150, 190, 225, 0.7);
+  }
+
+.text-muteed{
+/*  border-radius: 25px;
+  transition: background 2s;
+  background: white;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+/*.text-muteed:hover{
+  background:inherit;
+}*/
+sup{
+  width: 160px;
+  color:white;
+  background-color:red;
+  animation: tekin infinite;
+  animation-duration: 0.5s;
+}
+
+@keyframes tekin {
+  from{box-shadow: 0 0 7px red;}
+  to{box-shadow: 0 0 14px red;}
+}
+
+.offcanvas{
+  background-image: url(../img/neon-category.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.offcanvas-title{
+  color: whitesmoke;
+}
+.toifa-nomi{
+  color:white; 
+  border:1px solid white;
+}
+.toifa-nomi:hover{
+  color: black;
+  background: white !important;
+}
+/*.rasm_bloki{
+  border: solid 1px white;
+  width: 174px;
+  height: 200px;
+  margin-bottom: 6px;
+  margin-top: 2px;
+}
+.tv-img{
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  transition: box-shadow 1s;
+}*/
+
+.tv-img:hover{
+  transform: rotateY(6deg);
+  animation-duration: 3s;
+  border-radius: 20px;
+  box-shadow: 0 0 65px white;
+}
+.rasm_bloki{
+  width: 100%;
+  height: 50%;
+  margin-bottom: 5px;
+  margin-top: 3px;
+}
+.rasm_bloki img{
+  display: block;
+  height: 95%;
+  width: 100%;
+}
+.w-100{
+  height: 550px;
+}

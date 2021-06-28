@@ -1,0 +1,75 @@
+{% extends './wrapper-base.html' %}
+
+
+
+{% block content %}
+<div class="row">
+            {% for mahsulot in mahsulotlar %}
+            <div class="card-group col shadow-sm">
+                <div class="rasm_bloki">
+                    {% if mahsulot.rasm %}
+                    <img class="tv-img" src="{{ mahsulot.rasm.url }}" alt="product image">
+                    {% endif %}
+                </div>
+                <!-- tv-img -- Tovar rasmi -->
+                <div class="card-body">
+                    <h5 class="card-title">{{ mahsulot.nomi }}</h5>
+                    <p class="card-text">{{ mahsulot.tarif|truncatechars:70 }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-info">Harid</button>
+                            <button type="button" class="btn btn-sm btn-success">Savatga</button>
+                            <br>
+                            <button type="button" class="btn btn-sm btn-success"><a href="{% url 'shop:batafsil' mahsulot.id %}">Batafsil</a></button>
+                        </div>
+                        <small class="text-muteed">{{ mahsulot.narx }} $</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if mahsulotlar.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ 1 }}" tabindex="-1" aria-disabled="true">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ mahsulotlar.previous_page_number }}" aria-disabled="true">Oldingi</a>
+            </li>
+            {% endif %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">{{ mahsulotlar.number }}</a>
+            </li>
+            <li class="page-item">
+                {% if mahsulotlar.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ mahsulotlar.next_page_number }}">Keyingi</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ mahsulotlar.paginator.num_pages }}">{{ mahsulotlar.paginator.num_pages }}</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}
+
+
+
+{% block title %}
+Ilyos
+{% endblock %}
+    
+
+{% block category %}
+{% for kategoriya in kategoriyalar %}
+              <ul>
+                  <a style="text-decoration:none" href="{% url 'shop:category' kategoriya.id %}">
+                      <li style="background: inherit;" class="toifa-nomi">
+                          {{ kategoriya.nomi }}
+                      </li>
+                  </a>
+              </ul>
+{%endfor%}
+{% endblock %}
